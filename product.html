@@ -1,0 +1,108 @@
+ <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Product Page</title>
+            <link rel="stylesheet" href="styles.css">
+            <script src="https://cdn.tailwindcss.com"></script>
+
+        </head>
+
+        <body>
+            <header>
+                <!--Main Logo--> 
+                <a href="/" class="logo">
+                    <img src="SafeVibes/SafeVibesLogo.png" alt="SafeVibes Logo">
+                </a>
+
+                <!--Navigation --> 
+                <nav class="nav-bar">
+                    <ul class="lava-list">
+                    <a href="index.html" class="lava-link" data-color="#1abc9c">About Us</a>
+                    <a href="ourTeam.html" class="lava-link" data-color="#3498db">Meet the Team</a>
+                    <a href="product.html" class="lava-link" data-color="#9b59b6">Product</a>
+
+                        <!-- IMPORTANT: must be LAST and inside the UL -->
+                        <span class="nav-indicator"></span>
+                    </ul>
+                </nav>
+            </header>
+             <!-- End Navigation --> 
+
+        <main class ="main-content">
+
+        <!-- Hero -->
+<section class="full-bleed bg-slate-900 text-white">
+  <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h1 class="text-6xl font-semibold tracking-tight text-orange-500">Guardian</h1>
+      <p class="mt-6 text-xl text-slate-300">Safety alerts you can feel</p>
+      <div class="mt-8 flex gap-4">
+      </div>
+    </div>
+
+    <div class="border rounded-2xl shadow-sm p-4 bg-white">
+    <div class="aspect-[3/2] grid place-items-center text-slate-500 text-sm">
+    <span class="px-3 py-1 rounded-full bg-slate-100">Image/demo below ↓</span>
+    </div>
+    </div>
+</section>
+        
+    <!-- FEATURES -->
+  <section class="max-w-7xl mx-auto px-6 py-20">
+    <h2 class="text-4xl font-semibold text-slate-900 mb-12 text-center">
+      Reasons to Choose SafeVibes
+    </h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+        <h3 class="text-xl font-semibold mb-2">Haptic Feedback</h3>
+        <p class="text-slate-600">Tactile vibrations bypass hearing/sight.</p>
+      </div>
+
+      <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+        <h3 class="text-xl font-semibold mb-2">Wearable Design</h3>
+        <p class="text-slate-600">Integrates with safety gear.</p>
+      </div>
+
+      <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+        <h3 class="text-xl font-semibold mb-2">Pre-Impact Alert</h3>
+        <p class="text-slate-600">Warns before intrusion, not after.</p>
+      </div>
+
+      <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+        <h3 class="text-xl font-semibold mb-2">Directional Cues</h3>
+        <p class="text-slate-600">Shows direction of threat.</p>
+      </div>
+    </div>
+  </section>
+
+    </main>
+        <footer>
+            <p>&copy; SafeVibes</p> 
+            <P>Contact Us</p>
+            <p>Meet the Team</p> 
+        </footer>  
+    </div>
+
+     <script>
+        const links = document.querySelectorAll('.lava-link');
+        const indicator = document.querySelector('.nav-indicator');
+
+        links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            const rect = link.getBoundingClientRect();
+            const parentRect = link.parentElement.parentElement.getBoundingClientRect();
+            const color = link.dataset.color;
+
+            indicator.style.width = `${rect.width}px`;
+            indicator.style.left = `${rect.left - parentRect.left}px`;
+            indicator.style.backgroundColor = color;
+        });
+    });
+    </script>
+
+</body>   
+</html>
+
