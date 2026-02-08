@@ -333,6 +333,17 @@ ul li a {
     transform: translateY(0);
   }
 }
+
+
+@keyframes infiniteSlider {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Adjust the calc value based on the total width of all your slides */
+    transform: translateX(calc(-250px * 5));
+  }
+}
    
 /* =========================================
     FOOTER
