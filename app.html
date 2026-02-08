@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Mission</title>
+            <title>SafeVibes App</title>
 
             <!--Linking SwiperJS CSS-->
             <link rel ="stylesheet" href = "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
@@ -13,15 +13,15 @@
             <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
         </head>
-
-             <body>
-                <header>
+        
+        <body>
+            <header>
                 <!--Main Logo--> 
                 <a href="/" class="logo">
                     <img src="Pictures_SV/SafeVibes_Logo.png" alt="SafeVibes Logo">
                 </a>
-
-  <!--Navigation --> 
+                
+            <!--Navigation --> 
                 <nav class="nav-bar">
                     <ul class="lava-list">
                         <li>
@@ -51,21 +51,12 @@
                     </nav>
                 </header>
 
-            <main class ="main-content">
-            <section id ="mission" class = "w-full bg-grey">
-                  <div class="max-w-screen-2xl mx-auto px-6 md:px-10 py-20">
-                        <h2 class="app-title text-center text-8xl">Our Mission</h2>
-                        <p class="app-subtitle text-center text-5xl text-black ">To enhance safety and accessibility by transforming physical risk into intuitive haptic feedback — empowering people to respond quickly, confidently, and with greater awareness.</p>
-                </section>
 
-
-             <footer class= "full-bleed mt-12">
+                <footer class= "full-bleed mt-12">
                     <p>&copy; SafeVibes</p>
                      <p>Contact Us</p>
                      <p>Meet the Team</p>
                 </footer>
-
-    </body>
 
     <script>
         const links = document.querySelectorAll('.lava-link');
@@ -84,4 +75,34 @@
     });
     </script>
 
-</html> 
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+  const observerElements = document.querySelectorAll('.observer-element');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add classes for the final, visible state
+        entry.target.classList.remove('opacity-0', 'translate-y-4');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        // Stop observing once animated
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null, // observe the viewport
+    rootMargin: '0px',
+    threshold: 0.1 // trigger when 10% of the element is visible
+  });
+
+  observerElements.forEach(element => {
+    observer.observe(element);
+  });
+});
+
+</script>
+
+     </body>  
+</html>
