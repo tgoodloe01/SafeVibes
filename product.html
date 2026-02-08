@@ -137,12 +137,19 @@
 
  <script>
 const swiper = new Swiper('.product-swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
   loop: true,
   watchOverflow: false,
   pagination: {
     el: '.product-swiper .swiper-pagination',
     clickable: true,
   },
+   autoplay: {
+      delay: 3500,           // time between slides (ms)
+      disableOnInteraction: false, // keep autoplay after you click/drag
+      pauseOnMouseEnter: true,     // optional: pause when hovering
+    },
 });
   </script>
 
