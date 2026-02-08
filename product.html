@@ -5,8 +5,12 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Product Page</title>
             <link rel="stylesheet" href="styles.css">
+            <link rel="stylesheet" href="stylesOurProduct.css">
             <script src="https://cdn.tailwindcss.com"></script>
-
+            
+  <!--Linking SwiperJS CSS-->
+            <link rel ="stylesheet" href = "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+            
         </head>
 
         <body>
@@ -42,12 +46,37 @@
       <div class="mt-8 flex gap-4">
       </div>
     </div>
+    
+    <!-- Swiper Container -->
+<div class="swiper product-swiper w-full mt-8 mb-12 max-w-screen-2xl px-6">
+  <!-- Swiper Wrapper -->
+  <div class="swiper-wrapper">
 
-    <div class="border rounded-2xl shadow-sm p-4 bg-white">
-    <div class="aspect-[3/2] grid place-items-center text-slate-500 text-sm">
-      <img src= "Pictures_SV/Main.png" alt = "Photo Main"/>
+    <!-- Slide 1 -->
+    <div class="swiper-slide">
+      <div class="border rounded-2xl shadow-sm p-4 bg-white">
+        <div class="aspect-square grid place-items-center overflow-hidden">
+          <img src="Pictures_SV/Main.png" alt="Photo Main">
+        </div>
+      </div>
     </div>
+
+    <!-- Slide 2 -->
+<div class="swiper-slide">
+  <div class="border rounded-2xl shadow-sm p-4 bg-white">
+    <div class="h-[30rem] w-full flex justify-center items-center overflow-hidden">
+      <img src="Pictures_SV/MAIN2.png" 
+           alt="Photo Main2" 
+           class="object-contain max-h-full max-w-full">
     </div>
+  </div>
+</div>
+
+  </div> <!-- END swiper-wrapper -->
+
+  <!-- Pagination -->
+  <div class="swiper-pagination"></div>
+</div>
 </section>
         
     <!-- FEATURES -->
@@ -80,13 +109,12 @@
   </section>
 
     </main>
+
         <footer class= "full-bleed mt-12">
                     <p>&copy; SafeVibes</p>
                      <p>Contact Us</p>
                      <p>Meet the Team</p>
                 </footer> 
-    </div>
-
      <script>
         const links = document.querySelectorAll('.lava-link');
         const indicator = document.querySelector('.nav-indicator');
@@ -104,6 +132,20 @@
     });
     </script>
 
-</body>   
-</html>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
+
+ <script>
+const swiper = new Swiper('.product-swiper', {
+  loop: true,
+  watchOverflow: false,
+  pagination: {
+    el: '.product-swiper .swiper-pagination',
+    clickable: true,
+  },
+});
+  </script>
+
+</body>   
+
+</html>

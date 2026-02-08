@@ -1,0 +1,25 @@
+.product-swiper {
+  padding-bottom: 40px; /* space for pagination */
+}
+
+.product-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or 'contain' if you prefer */
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: orange !important;
+}
+
