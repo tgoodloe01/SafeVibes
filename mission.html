@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Mission</title>
+
+            <!--Linking SwiperJS CSS-->
+            <link rel ="stylesheet" href = "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+            
+            <link rel="stylesheet" href="styles.css">
+            <script src="https://cdn.tailwindcss.com"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+        </head>
+
+             <body>
+                <header>
+                <!--Main Logo--> 
+                <a href="/" class="logo">
+                    <img src="Pictures_SV/SafeVibes_Logo.png" alt="SafeVibes Logo">
+                </a>
+
+                     <!--Navigation --> 
+                <nav class="nav-bar">
+                    <ul class="lava-list">
+                    <a href="index.html" class="lava-link" data-color="#1abc9c">About Us</a>
+                    <a href="ourTeam.html" class="lava-link" data-color="#3498db">Meet the Team</a>
+                    <a href="product.html" class="lava-link" data-color="#9b59b6">Product</a>
+
+                        <!-- IMPORTANT: must be LAST and inside the UL -->
+                        <span class="nav-indicator"></span>   
+                    </ul>
+                </nav>
+            </header> 
+
+             <footer class= "full-bleed mt-12">
+                    <p>&copy; SafeVibes</p>
+                     <p>Contact Us</p>
+                     <p>Meet the Team</p>
+                </footer>
+
+    </body>
+
+    <script>
+        const links = document.querySelectorAll('.lava-link');
+        const indicator = document.querySelector('.nav-indicator');
+
+        links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            const rect = link.getBoundingClientRect();
+            const parentRect = link.parentElement.parentElement.getBoundingClientRect();
+            const color = link.dataset.color;
+
+            indicator.style.width = `${rect.width}px`;
+            indicator.style.left = `${rect.left - parentRect.left}px`;
+            indicator.style.backgroundColor = color;
+        });
+    });
+    </script>
+
+</html> 
