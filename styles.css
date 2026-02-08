@@ -344,10 +344,6 @@ ul li a {
     transform: translateX(calc(-250px * 5));
   }
 }
-   
-.full-bleed {
-    overflow: hidden;
-}
 
 /* =========================================
     FOOTER
