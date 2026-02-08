@@ -54,6 +54,7 @@
 
              <main class ="main-content">
 
+                <div class="observer-element opacity-0 translate-y-4 transition-all duration-1000 ease-out">
                 <section id ="overview" class = "w-full bg-grey">
                     <div class="max-w-screen-2xl mx-auto px-6 md:px-10 py-20">
                         <h2 class="app-title text-center text-8xl">Who We Are</h2>
@@ -316,6 +317,52 @@
             }
         });
     </script>
+<script>
+    module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        // "infinite-slider" is the utility class name, the value references the keyframe
+        'infinite-slider': 'infiniteSlider 20s linear infinite',
+      },
+      keyframes: {
+        infiniteSlider: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(calc(-250px * 5))' }, // Adjust this value
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+
+</script>
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+  const observerElements = document.querySelectorAll('.observer-element');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add classes for the final, visible state
+        entry.target.classList.remove('opacity-0', 'translate-y-4');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        // Stop observing once animated
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null, // observe the viewport
+    rootMargin: '0px',
+    threshold: 0.1 // trigger when 10% of the element is visible
+  });
+
+  observerElements.forEach(element => {
+    observer.observe(element);
+  });
+});
+</script>
 
      </body>  
 </html>
